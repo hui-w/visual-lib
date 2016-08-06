@@ -1,6 +1,9 @@
 # Visual Lib
 A reusable, mobility friendly data visualization library
 
+## Demo
+https://hui-w.github.io/visual-lib
+
 ## Features
 * Axis Chart (Bar, Line and their combination)
 * Pie Chart
@@ -12,9 +15,6 @@ A reusable, mobility friendly data visualization library
 ![image](https://raw.githubusercontent.com/hui-w/visual-lib/master/screenshots/pie.png)
 
 ![image](https://raw.githubusercontent.com/hui-w/visual-lib/master/screenshots/radar.png)
-
-## Demo
-https://hui-w.github.io/visual-lib
 
 ## How to use?
 
