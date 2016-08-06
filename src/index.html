@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="favicon.png"/>
+
+	<title>Data Visualization - Sandbox</title>
+	<link href="web.css" rel="stylesheet"/>
+	<script src="chart_common.js"></script>
+	<script src="chart_base.js"></script>
+	<script src="axis_chart.js"></script>
+	<script src="pie_chart.js"></script>
+	<script src="radar_chart.js"></script>
+	
+	<script src="web_common.js"></script>
+	<script src="sandbox.js"></script>
+	<script src="property_window.js"></script>
+	
+	<script src="lib/jsoneditor.min.js"></script>
+	<link href="lib/jsoneditor.min.css" rel="stylesheet"/>
+	<script src="lib/base64.js"></script>
+</head>
+<body onselectstart = "/*return false*/" onload="sandbox_load();" onresize="windowResized();">
+	<div style="font-size: 200%;">Data Visualization (Chart Sandbox) 
+	</div>
+	<hr />
+	<div class="chart-header">
+		<span class="title">Axis Chart</span>
+		<span class="menu">
+			<a href="javascript: propertyWnd.show('axisChart', axisChart.canvas);">[Settings]</a>
+			<a href="javascript: getCodes('axisChart', 'AxisChart');">[Get Codes]</a>
+		</span>
+	</div>
+	<div id="pnl_Axis"></div>
+	<div id="axisTools" style="margin-top: 10px; font-size: 80%">
+		Sample Data: 
+		<a href="javascript: loadAxisSample(1);">Bar</a>
+		<a href="javascript: loadAxisSample(2);">Line</a>
+		<a href="javascript: loadAxisSample(3);">Line&BarCombo</a>
+		<a href="javascript: loadAxisSample(4);">2BarsCombo</a>
+		<a href="javascript: loadAxisSample(5);">3Combo</a>
+		Sample Property:
+		<a href="javascript: loadAxisSample(6);">Slider</a>
+		<a href="javascript: loadAxisSample(7);">ScaleLine</a>
+		| <a href="javascript: loadAxisSample(0);">Default</a>
+		<a href="javascript: selectAxisByIndex();">SelectByIndex</a>
+	</div>
+	<hr />
+	<div class="chart-header">
+		<span class="title">Pie Chart</span>
+		<span class="menu">
+			<a href="javascript: propertyWnd.show('pieChart', pieChart.canvas);">[Settings]</a>
+			<a href="javascript: getCodes('pieChart', 'PieChart');">[Get Codes]</a>
+		</span>
+	</div>
+	<div id="pnl_Pie"></div>
+	<div id="pieTools" style="margin-top: 10px; font-size: 80%">
+		Sample Data: 
+		<a href="javascript: loadPieSample(1);">TestStatus</a>
+		<a href="javascript: loadPieSample(3);">RGBCircle</a>
+		Sample Property:
+		<a href="javascript: loadPieSample(2);">Scroll</a>
+		| <a href="javascript: loadPieSample(0);">Default</a>
+	</div>
+	<hr />
+	<div class="chart-header">
+		<span class="title">Radar Chart</span>
+		<span class="menu">
+			<a href="javascript: propertyWnd.show('radarChart', radarChart.canvas);">[Settings]</a>
+			<a href="javascript: getCodes('radarChart', 'RadarChart');">[Get Codes]</a>		
+		</span>
+	</div>
+	<div id="pnl_Radar"></div>
+	<div id="radarTools" style="margin-top: 10px; font-size: 80%">
+		Sample Data: 
+		<a href="javascript: loadRadarSample(1);">Paper Evaluation</a>
+		Sample Property:
+		<a href="javascript: loadRadarSample(2);">Polygon</a>
+		| <a href="javascript: loadRadarSample(0);">Default</a>
+	</div>
+	<hr />
+	<div id="defaultColorTable" style="margin-bottom: 10px; height: 30px;"></div>
+	<div id="output">
+		<div class="header" id="outputHeader">Output Console</div>
+		<div id="outputBody"></div>
+	</div>
+	<div id="propertyWndWrapper"></div>
+	<div class="mask hidden" id="mask">
+		<div id="jsonEditorWrapper">
+			<div id="jsonEditor"></div>
+			<span class="save"><a href="javascript: closeJsonEditor(true)">Ok</a></span>
+			<span class="cancel"><a href="javascript: closeJsonEditor(false)">Cancel</a></span>
+		</div>		
+	</div>
+	<div>
+		Copyright (C) QLike.com
+	</div>
+</body>
+</html>

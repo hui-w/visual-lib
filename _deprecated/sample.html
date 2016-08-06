@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<title>canvas test</title>
+<head>
+<style>
+#canvas{
+    width:800px;
+    height:800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+    margin: 10px 10px;
+}
+</style>
+</head>
+<body>
+    <canvas id='canvas' width=800 height=800>unsupport</canvas>
+ 
+</body>
+<script>
+window.onload = function(){
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.strokeColor = 'black';
+    ctx.lineWidth = 3;
+    ctx.shadowOffsetX = 10;
+    ctx.shadowOffsetY = 5;
+    ctx.shadowBlur = 2;
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+    ctx.save();
+    ctx.translate(100, 100);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, 0);
+    for(var i = 0; i < 20; i += 0.1){
+        var x = i * 20;
+        var y = Math.sin(i) * 20;
+        ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    ctx.translate(100, 200);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, 0);
+    ctx.quadraticCurveTo(150, -100, 200, 0);
+    ctx.quadraticCurveTo(250, 200, 400, 0);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    ctx.translate(100, 400);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(50, 0, 100, -50, 150, -100);
+    ctx.bezierCurveTo(175, -75, 150, -25, 100, 0);
+    ctx.bezierCurveTo(300, -75, 600, -100, 400, 0);
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    ctx.translate(100, 600);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(400, 0);
+    ctx.moveTo(0, -124);
+    for(var i = 0; i < 25; i += 0.1){
+        var x = i * 10;
+        var y = -(((i - 12) * (i - 12)) - 20);  
+        ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.restore();
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(100, 0);
+    ctx.lineTo(100, 800);
+    ctx.stroke();
+    ctx.restore();
+};
+</script>
+</html>

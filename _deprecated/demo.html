@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Chart Demo</title>
+<script src="utility.js"></script>
+<script src="graph_panel.js"></script>
+<script src="bar_chart.js"></script>
+<script type="text/javascript">
+function showDemo() {
+	var panel = new GraphPanel(600, 300, "pnl_1");
+	panel.borderSize = 2;
+	panel.borderColor = "RGB(0,0,0)";
+	panel.render();
+
+	var barChart = new BarChart(panel);
+	barChart.values = [30, 40, 50, 20, 80, 100, 120, 55, 10, 20];
+	barChart.padding = {
+		top : 10,
+		right : 30,
+		bottom : 50,
+		left : 50
+	};
+	barChart.render();
+}
+</script>
+</head>
+<body onload="showDemo()">
+	<div id="pnl_1"></div>
+</body>
+</html>
