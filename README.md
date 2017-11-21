@@ -1,5 +1,5 @@
 # Visual Lib
-A reusable, mobility friendly data visualization library
+A reusable and mobility friendly data visualization library
 
 ## Demo
 https://hui-w.github.io/visual-lib
